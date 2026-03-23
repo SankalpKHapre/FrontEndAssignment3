@@ -1,0 +1,21 @@
+3. We have a search input field where data is displayed as a list.
+There is an issue with loading data / too many calls. How do we resolve it?
+Where would you write your solution and why?
+So i would use useEffect for the calls and get the entire list stored in a state
+
+Implement whatever you would suggest.
+const [data,setData] = useState([])
+cosnt [search,setSearch] = useState("")
+
+
+useEffect(()=>{
+    const timer = (async()=> {
+    const reponse = await fetch(`${apicall}?search=${search}`)
+    const reuturnedData = await response.json()
+    setData(reuturnedData;)
+
+    },300)
+    return ()=> clearTimeour(timer);
+
+},[query])
+
